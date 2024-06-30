@@ -13,11 +13,9 @@ public class min_and_max {
     private static int min(List<Integer> list){
         int min = list.get(0);
 
-        for(int i = 0; i <= list.size()-1;i++){
-            if (min > list.get(i)) {
-                int temp = min;
-                min = list.get(i);
-                list.set(i, temp);
+        for(int temp:list){
+            if (min > temp) {
+                min = temp;
             }
         }
         return min;
@@ -26,11 +24,9 @@ public class min_and_max {
     private static int max(List<Integer> list){
         int max = list.get(0);
 
-        for(int i = 0; i <= list.size()-1;i++){
-            if (max < list.get(i)) {
-                int temp = max;
-                max = list.get(i);
-                list.set(i, temp);
+        for(int temp:list){
+            if (max < temp) {
+                max = temp;
             }
         }
         return max;
