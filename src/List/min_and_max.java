@@ -1,0 +1,38 @@
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class min_and_max {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>(Arrays.asList(43,12,22,15,11,7,98));
+        System.out.println("The min in list is : "+min(list));
+        System.out.println("The max in list is : "+max(list));
+    }
+
+    private static int min(List<Integer> list){
+        int min = list.get(0);
+
+        for(int i = 0; i <= list.size()-1;i++){
+            if (min > list.get(i)) {
+                int temp = min;
+                min = list.get(i);
+                list.set(i, temp);
+            }
+        }
+        return min;
+    }
+
+    private static int max(List<Integer> list){
+        int max = list.get(0);
+
+        for(int i = 0; i <= list.size()-1;i++){
+            if (max < list.get(i)) {
+                int temp = max;
+                max = list.get(i);
+                list.set(i, temp);
+            }
+        }
+        return max;
+    }
+}
